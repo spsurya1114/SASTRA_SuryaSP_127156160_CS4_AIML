@@ -41,10 +41,7 @@ SASTRA_SuryaSP_127156160_CS4_AIML/
 ├── Documentation/
 │   └── DOCUMENTATION.md (Unified master documentation covering Architecture, Setup, User Guide, API, Report, Standards, and Case Study 4 mapping)
 ├── Video/
-│   ├── VIDEO_DEMO_SCRIPT_AND_TIMELINE.md (Minute-by-minute script)
-│   ├── STORYBOARD_AND_RECORDING_CHECKLIST.md (Rubrics & setup)
 │   ├── VIDEO_SUBMISSION_LINK.md (Google Drive Video Demonstration Link)
-│   └── Drive Link (Direct URL)
 ├── Declarations/
 │   ├── Academic_Integrity_Declaration.md (Includes 4-column AI Tool Usage table)
 │   └── AI_Tool_Usage_Declaration.md
