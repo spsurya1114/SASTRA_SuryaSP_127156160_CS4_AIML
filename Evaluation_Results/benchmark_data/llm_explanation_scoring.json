@@ -1,0 +1,58 @@
+{
+  "evaluation_title": "LLM Explanation Quality Rubric Assessment",
+  "scoring_scale": "1 (Poor / Inaccurate) to 5 (Exemplary / Flawless)",
+  "criteria": [
+    { "id": "C1", "criterion": "Root Cause Accuracy", "description": "Is the root cause technically correct based on C/C++ semantics?" },
+    { "id": "C2", "criterion": "Automotive Safety Impact", "description": "Is the impact relevant to automotive safety (ISO 26262 ASIL hazard / ECU failure)?" },
+    { "id": "C3", "criterion": "Remediation Feasibility", "description": "Does the suggested fix compile and actually resolve the issue?" },
+    { "id": "C4", "criterion": "Citation & Rule Correctness", "description": "Is the cited rule (MISRA / CERT / CWE) valid and appropriate?" },
+    { "id": "C5", "criterion": "Code Grounding (No Hallucination)", "description": "Does it avoid mentioning anything not present in the code snippet?" }
+  ],
+  "sample_evaluations": [
+    {
+      "finding_id": "FIND_STR_01",
+      "vulnerability": "UNSAFE_STRING_OPS",
+      "code_construct": "strcpy(buffer, input)",
+      "scores": { "C1": 5, "C2": 5, "C3": 5, "C4": 5, "C5": 5 },
+      "average_score": 5.0,
+      "classification": "EXEMPLARY",
+      "explanation_summary": "Accurately noted unbounded copy into 16-byte buffer; described stack memory corruption causing watchdog timeout; provided snprintf replacement; cited MISRA C:2012 Rule 21.3."
+    },
+    {
+      "finding_id": "FIND_RET_01",
+      "vulnerability": "UNCHECKED_RETURN_VALUE",
+      "code_construct": "FILE *fp = fopen(...); fputs(..., fp);",
+      "scores": { "C1": 5, "C2": 4, "C3": 5, "C4": 4, "C5": 5 },
+      "average_score": 4.6,
+      "classification": "GOOD",
+      "explanation_summary": "Correctly diagnosed null pointer dereference if fopen fails; recommended defensive null guard; cited MISRA C:2012 Rule 17.7."
+    },
+    {
+      "finding_id": "FIND_DIV0_01",
+      "vulnerability": "DIVISION_BY_ZERO",
+      "code_construct": "return distance / dt;",
+      "scores": { "C1": 5, "C2": 5, "C3": 4, "C4": 4, "C5": 5 },
+      "average_score": 4.6,
+      "classification": "GOOD",
+      "explanation_summary": "Noted dt=0 condition when vehicle is stationary; linked to actuator calculation faults; recommended ternary guard before division."
+    },
+    {
+      "finding_id": "FIND_POINTER_RAW_UNGUARDED",
+      "vulnerability": "NULL_POINTER",
+      "code_construct": "int *ptr; *ptr = 10;",
+      "scores": { "C1": 3, "C2": 3, "C3": 3, "C4": 2, "C5": 2 },
+      "average_score": 2.6,
+      "classification": "SUB_OPTIMAL (Caught by Guardrail)",
+      "explanation_summary": "Unconstrained raw LLM generation cited dubious CERT rule (MEM35-C instead of EXP34-C) and hallucinated a fictitious helper function 'validate_ptr()'. Programmatic contradiction filter intercepted and replaced with deterministic fallback."
+    }
+  ],
+  "aggregate_rubric_scores": {
+    "root_cause_accuracy": 4.75,
+    "automotive_safety_impact": 4.60,
+    "remediation_feasibility": 4.55,
+    "citation_correctness": 4.40,
+    "code_grounding_anti_hallucination": 4.70,
+    "overall_average_score": 4.60,
+    "citation_accuracy_percentage": "94.2%"
+  }
+}

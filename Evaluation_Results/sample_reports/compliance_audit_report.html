@@ -1,0 +1,656 @@
+
+    <html>
+    <head>
+        <title>Automotive Secure Code Review Report - Automotive_ECU_Firmware_CS4</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+            h1, h2, h3 { color: #222; }
+            .container { max-width: 1200px; margin: auto; }
+            .metadata-box { display: flex; gap: 20px; margin-bottom: 30px; }
+            .summary-card { flex: 1; background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+            .finding { border: 1px solid #e0e0e0; padding: 20px; margin-bottom: 25px; border-radius: 8px; background: #fff; }
+            .CRITICAL { border-left: 6px solid #d9534f; }
+            .HIGH { border-left: 6px solid #f0ad4e; }
+            .MEDIUM { border-left: 6px solid #5bc0de; }
+            .LOW { border-left: 6px solid #5cb85c; }
+            .INFO { border-left: 6px solid #aaa; }
+            table { border-collapse: collapse; width: 100%; margin-bottom: 15px; }
+            th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; }
+            th { width: 150px; color: #666; }
+            pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: Consolas, monospace; font-size: 14px; border: 1px solid #e0e0e0; }
+            .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+            .badge-status { background: #e9ecef; color: #495057; border: 1px solid #ced4da; }
+            .badge-severity { background: #343a40; color: #fff; }
+            ul.no-bullets { list-style-type: none; padding: 0; }
+            ul.no-bullets li { margin-bottom: 5px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Automotive Secure Code Review Report</h1>
+            
+            <div class="metadata-box">
+                <div class="summary-card">
+                    <h2>Project Information</h2>
+                    <p><strong>Project ID:</strong> Automotive_ECU_Firmware_CS4</p>
+                    <p><strong>Repo Version:</strong> HEAD</p>
+                    <p><strong>Analysis Timestamp:</strong> 2026-10-18 14:30:12 UTC</p>
+                </div>
+                
+                <div class="summary-card">
+                    <h2>Summary by Severity</h2>
+                    <ul class="no-bullets">
+                        <li><span class="badge badge-severity" style="background:#d9534f">CRITICAL</span> : 0</li>
+                        <li><span class="badge badge-severity" style="background:#f0ad4e">HIGH</span> : 1</li>
+                        <li><span class="badge badge-severity" style="background:#5bc0de">MEDIUM</span> : 19</li>
+                        <li><span class="badge badge-severity" style="background:#5cb85c">LOW</span> : 0</li>
+                        <li><span class="badge badge-severity" style="background:#aaa">INFO</span> : 0</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h2>Reviewer Status</h2>
+                    <ul class="no-bullets">
+                        <li><strong>Pending Review:</strong> 20</li>
+                        <li><strong>Accepted:</strong> 0</li>
+                        <li><strong>Edited:</strong> 0</li>
+                        <li><strong>Rejected:</strong> 0</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metadata-box">
+                <div class="summary-card" style="width: 100%;">
+                    <h2>Summary by Category</h2>
+                    <ul>
+                        <li>DIVISION_BY_ZERO: 15</li><li>INTEGER_OVERFLOW: 4</li><li>UNSAFE_STRING_OPS: 1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Detailed Findings (20)</h2>
+    
+            <div class="finding MEDIUM">
+                <h3>[c67c39f7-ddd7-432d-bb55-b852d47e33bd] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 7</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Multiple vulnerabilities</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[19e19859-c986-4587-963a-1e0ef81a8166] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 10</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Cross-file dependency vulnerability</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[1300f63f-5026-4465-ae18-88b88deb7f53] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 7</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Multiple vulnerabilities</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[ee5064c1-cd22-4076-9f2c-604945b2fd99] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 10</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Cross-file dependency vulnerability</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[28f72d6d-3863-4d76-94c3-1dcfa577c5bb] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 6</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Uninitialized variable</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[10e399ae-e048-4d8a-8514-d7c7404a5128] INTEGER_OVERFLOW detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>INTEGER_OVERFLOW</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 8</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>int processed = raw_value * 2;</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[797083eb-aae6-47b6-b86e-1905e5cd4566] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 10</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Array boundary violation (out of bounds)</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[710863e4-a803-465d-84db-ee47d5312fd4] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 18</td></tr>
+                    <tr><th>Function</th><td>calculate_speed</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>return distance / time;</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[70e13ef3-585e-49f8-ab50-bacd13185c74] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 6</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Uninitialized variable</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[65873bc6-76d5-4939-9a93-d08b130aae68] INTEGER_OVERFLOW detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>INTEGER_OVERFLOW</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 8</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>int processed = raw_value * 2;</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[e7090f77-d4f9-4edc-96f6-9184511492d7] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 10</td></tr>
+                    <tr><th>Function</th><td>read_sensor_data</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Array boundary violation (out of bounds)</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[4f3a4993-93f3-40f4-89ec-6c71affcac8c] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>sensor.c : Line 18</td></tr>
+                    <tr><th>Function</th><td>calculate_speed</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>return distance / time;</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[92b36756-35e3-4966-82e8-6f1deb7121c7] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 7</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Multiple vulnerabilities</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[178f6af8-7c55-449d-b0f1-d21e65269998] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>main.c : Line 10</td></tr>
+                    <tr><th>Function</th><td>main</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Cross-file dependency vulnerability</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[6e5b33ec-3083-43cb-8026-4461d2c90c25] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 5</td></tr>
+                    <tr><th>Function</th><td>N/A</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>* static-analysis / SecureCodeRAG workflow has something to detect.</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[974dd905-dcac-4fdb-baa4-ee7b7dc0d44d] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 18</td></tr>
+                    <tr><th>Function</th><td>N/A</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Finding candidate: pointer dereference without checking for nullptr.</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[c4adc29a-3652-40fd-91a8-2bf57f49f438] INTEGER_OVERFLOW detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>INTEGER_OVERFLOW</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 19</td></tr>
+                    <tr><th>Function</th><td>readSensorValue</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>int readSensorValue(Sensor* sensor) {</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[be85cf4e-a2ef-46cf-9fcb-5be335dba7cf] DIVISION_BY_ZERO detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>DIVISION_BY_ZERO</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 23</td></tr>
+                    <tr><th>Function</th><td>N/A</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>// Finding candidate: unbounded copy into a fixed-size destination buffer.</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding MEDIUM">
+                <h3>[571fcf09-b87a-478d-a314-4ae2d48ddb65] INTEGER_OVERFLOW detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">MEDIUM</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>INTEGER_OVERFLOW</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 24</td></tr>
+                    <tr><th>Function</th><td>setSensorName</td></tr>
+                    <tr><th>Confidence</th><td>0.65</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>void setSensorName(const char* input) {</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+            <div class="finding HIGH">
+                <h3>[dded84bf-c118-46df-8cc1-5ff979b12223] UNSAFE_STRING_OPS detected</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="badge badge-status">PENDING_REVIEW</span>
+                    <span class="badge badge-severity">HIGH</span>
+                </div>
+                <table>
+                    <tr><th>Category</th><td>UNSAFE_STRING_OPS</td></tr>
+                    <tr><th>Location</th><td>automotive_sensor_demo.cpp : Line 26</td></tr>
+                    <tr><th>Function</th><td>setSensorName</td></tr>
+                    <tr><th>Confidence</th><td>0.87</td></tr>
+                    <tr><th>Evidence Status</th><td>INSUFFICIENT_CONTEXT</td></tr>
+                    <tr><th>Diagnostic</th><td>: </td></tr>
+                    <tr><th>Source/Rule</th><td>PROJECT_RULE / N/A</td></tr>
+                </table>
+                
+                <h4>Source Evidence (Code)</h4>
+                <pre>std::strcpy(sensorName, input);</pre>
+                
+                <h4>Static Analysis / AI Explanation</h4>
+                <p>Static analysis finding. Configure LLM_PROVIDER for AI explanation.</p>
+                
+                <h4>AI Recommendations</h4>
+                <p>No recommendation provided.</p>
+                
+                <h4>RAG Context References</h4>
+                <em>No RAG references retrieved for this finding.</em>
+            </div>
+        
+        </div>
+    </body>
+    </html>
+    

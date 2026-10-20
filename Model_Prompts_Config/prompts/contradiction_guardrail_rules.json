@@ -1,0 +1,36 @@
+{
+  "contradiction_matrix": {
+    "BOUNDARY_VIOLATION": {
+      "prohibited_claim_keywords": ["null pointer", "null-pointer", "dereferencing null", "nullptr"],
+      "action_on_violation": "FALLBACK_DETERMINISTIC_EXPLANATION",
+      "reason": "Boundary violations must focus strictly on buffer overflows, indexing, or size calculations."
+    },
+    "UNSAFE_STRING_OPS": {
+      "prohibited_claim_keywords": ["null pointer", "null-pointer", "integer division", "sql injection"],
+      "action_on_violation": "FALLBACK_DETERMINISTIC_EXPLANATION",
+      "reason": "String operations must focus on unbounded destination writes and null termination."
+    },
+    "NULL_POINTER": {
+      "prohibited_claim_keywords": ["buffer overflow", "out of bounds write", "format string"],
+      "action_on_violation": "FALLBACK_DETERMINISTIC_EXPLANATION",
+      "reason": "Null pointer findings must not be conflated with memory overrun defects."
+    },
+    "INTEGER_OVERFLOW": {
+      "prohibited_claim_keywords": ["null pointer", "use after free", "double free"],
+      "action_on_violation": "FALLBACK_DETERMINISTIC_EXPLANATION",
+      "reason": "Integer arithmetic defects must focus on range limits and signed wraparounds."
+    }
+  },
+  "required_sections": [
+    "Root Cause:",
+    "Impact:",
+    "Recommendation:",
+    "Guidance Reference:",
+    "Evidence Status:"
+  ],
+  "valid_evidence_statuses": [
+    "CONFIRMED",
+    "LIKELY",
+    "INSUFFICIENT_CONTEXT"
+  ]
+}

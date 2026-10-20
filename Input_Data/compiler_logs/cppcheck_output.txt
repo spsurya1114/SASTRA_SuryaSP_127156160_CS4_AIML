@@ -1,0 +1,4 @@
+[src/main.c:14]: (error) Buffer is accessed out of bounds: buffer
+[src/sensor.c:42]: (warning) Possible null pointer dereference: sensor_data
+[src/hardware.c:55]: (style) Variable 'retVal' is assigned a value that is never used.
+[src/utils.c:88]: (error) Memory leak: allocated_block

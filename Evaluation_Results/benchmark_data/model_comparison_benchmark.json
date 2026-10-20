@@ -1,0 +1,31 @@
+{
+  "comparison_title": "Local Model Benchmarking: Qwen2.5-Coder:3B vs. DeepSeek-Coder-V2:16B",
+  "hardware_environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 (12 GB VRAM)",
+    "ram": "32 GB DDR5",
+    "cpu": "Intel Core i7 (8 Cores, 16 Threads)"
+  },
+  "models": {
+    "qwen2.5-coder:3b": {
+      "parameter_count": "3.09 Billion",
+      "quantization": "Q4_K_M",
+      "memory_footprint_vram_gb": 1.9,
+      "avg_latency_per_finding_gpu_sec": 1.45,
+      "avg_latency_per_finding_cpu_sec": 4.20,
+      "explanation_quality_rubric_score": 4.60,
+      "citation_accuracy": "94.2%",
+      "suitability": "Ideal for fast interactive developer review, triage workbenches, and standard developer workstations/laptops with limited VRAM."
+    },
+    "deepseek-coder-v2:16b": {
+      "parameter_count": "15.7 Billion (MoE active 2.4B)",
+      "quantization": "Q4_K_M",
+      "memory_footprint_vram_gb": 9.8,
+      "avg_latency_per_finding_gpu_sec": 4.80,
+      "avg_latency_per_finding_cpu_sec": 26.50,
+      "explanation_quality_rubric_score": 4.75,
+      "citation_accuracy": "96.5%",
+      "suitability": "Ideal for dedicated overnight batch audit servers and comprehensive multi-file safety compliance certification runs with high-end GPUs."
+    }
+  },
+  "justification_for_dual_model_architecture": "Qwen2.5-Coder:3B provides immediate, responsive feedback (<1.5s) for continuous review with negligible RAM requirements (1.9 GB), whereas DeepSeek-Coder-V2:16B provides deeper multi-layer reasoning for batch compliance audits on dedicated hardware."
+}

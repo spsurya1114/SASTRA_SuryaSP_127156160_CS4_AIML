@@ -1,0 +1,27 @@
+{
+  "vectorstore_engine": "FAISS",
+  "index_type": "IndexFlatIP",
+  "metric": "METRIC_INNER_PRODUCT",
+  "embedding_dimensions": 768,
+  "normalized_embeddings": true,
+  "namespaces": {
+    "knowledge": {
+      "persistence_directory": "vectorstore/knowledge",
+      "index_file": "index.faiss",
+      "metadata_pickle": "index.pkl",
+      "total_indexed_documents": 15,
+      "domain": "ISO 26262, MISRA C:2012, Automotive Security Guidelines"
+    },
+    "project_ephemeral": {
+      "persistence_directory": "vectorstore/{project_id}",
+      "auto_cleanup_hours": 24,
+      "indexing_strategy": "per_repository_session"
+    }
+  },
+  "retrieval_strategy": {
+    "top_k_knowledge": 2,
+    "top_k_repo": 2,
+    "combined_top_k": 4,
+    "score_threshold": 0.65
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "evaluation_timestamp": "2026-10-20 01:20:49 UTC",
+  "model_tested": "qwen2.5-coder:3b",
+  "embedding_tested": "nomic-embed-text",
+  "confusion_matrix": {
+    "true_positives": 5,
+    "true_negatives": 2,
+    "false_positives": 1,
+    "false_negatives": 1,
+    "total_tested": 9
+  },
+  "metrics": {
+    "accuracy": 0.7778,
+    "precision": 0.8333,
+    "recall": 0.8333,
+    "f1_score": 0.8333,
+    "false_positive_rate_safe_code": 0.3333,
+    "avg_latency_seconds": 22.681
+  },
+  "test_cases": [
+    {
+      "id": "TC_STR_01",
+      "name": "Unbounded strcpy copy",
+      "target_category": "UNSAFE_STRING_OPS",
+      "ground_truth_present": true,
+      "detected_findings": 1,
+      "detected_categories": [
+        "UNSAFE_STRING_OPS"
+      ],
+      "classification": "TP",
+      "latency_sec": 33.129,
+      "findings_details": [
+        {
+          "category": "UNSAFE_STRING_OPS",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "UNSAFE_STRING_OPS",
+          "finding_snippet": "Root Cause:\nThe use of `strcpy` without bounds checking can lead to buffer overflows, which can be exploited to execute arbitrary code or cause a deni"
+        }
+      ]
+    },
+    {
+      "id": "TC_STR_02",
+      "name": "Unbounded strcat concatenation",
+      "target_category": "UNSAFE_STRING_OPS",
+      "ground_truth_present": true,
+      "detected_findings": 1,
+      "detected_categories": [
+        "UNSAFE_STRING_OPS"
+      ],
+      "classification": "TP",
+      "latency_sec": 30.081,
+      "findings_details": [
+        {
+          "category": "UNSAFE_STRING_OPS",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "UNSAFE_STRING_OPS",
+          "finding_snippet": "Root Cause:\nThe function `append_tag` uses `strcat` to concatenate a `prefix` to a `message` buffer without checking if the buffer has enough space. T"
+        }
+      ]
+    },
+    {
+      "id": "TC_LEAK_01",
+      "name": "Unfreed dynamic heap allocation",
+      "target_category": "RESOURCE_LEAK",
+      "ground_truth_present": true,
+      "detected_findings": 1,
+      "detected_categories": [
+        "RESOURCE_MISMANAGEMENT"
+      ],
+      "classification": "TP",
+      "latency_sec": 30.919,
+      "findings_details": [
+        {
+          "category": "RESOURCE_MISMANAGEMENT",
+          "severity": "MEDIUM",
+          "confidence": 0.73,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "RESOURCE_MISMANAGEMENT",
+          "finding_snippet": "Root Cause:\nThe code allocates memory for an integer array but does not free it, leading to a resource leak. This can exhaust memory resources in a re"
+        }
+      ]
+    },
+    {
+      "id": "TC_BOUNDS_01",
+      "name": "Array index off-by-one overrun",
+      "target_category": "OUT_OF_BOUNDS",
+      "ground_truth_present": true,
+      "detected_findings": 0,
+      "detected_categories": [],
+      "classification": "FN",
+      "latency_sec": 2.062,
+      "findings_details": []
+    },
+    {
+      "id": "TC_DIV0_01",
+      "name": "Unchecked denominator division",
+      "target_category": "DIVISION_BY_ZERO",
+      "ground_truth_present": true,
+      "detected_findings": 1,
+      "detected_categories": [
+        "DIVISION_BY_ZERO"
+      ],
+      "classification": "TP",
+      "latency_sec": 32.684,
+      "findings_details": [
+        {
+          "category": "DIVISION_BY_ZERO",
+          "severity": "MEDIUM",
+          "confidence": 0.73,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "DIVISION_BY_ZERO",
+          "finding_snippet": "Root Cause:\nThe division operation `return distance / dt;` in the `calculate_wheel_speed` function may result in a division by zero if `dt` is zero, w"
+        }
+      ]
+    },
+    {
+      "id": "TC_RET_01",
+      "name": "fopen return value used without null check",
+      "target_category": "UNCHECKED_RETURN_VALUE",
+      "ground_truth_present": true,
+      "detected_findings": 1,
+      "detected_categories": [
+        "UNCHECKED_RETURN_VALUE"
+      ],
+      "classification": "TP",
+      "latency_sec": 36.288,
+      "findings_details": [
+        {
+          "category": "UNCHECKED_RETURN_VALUE",
+          "severity": "MEDIUM",
+          "confidence": 0.93,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "UNCHECKED_RETURN_VALUE",
+          "finding_snippet": "Root Cause:\nThe function `write_crash_dump` does not check the return value of `fopen`, which can return `NULL` if the file cannot be opened. This can"
+        }
+      ]
+    },
+    {
+      "id": "TC_AST_DISAMB",
+      "name": "Pointer declaration and integer multiplication (SAFE)",
+      "target_category": "POINTER_VS_MULTIPLICATION",
+      "ground_truth_present": false,
+      "detected_findings": 1,
+      "detected_categories": [
+        "INTEGER_OVERFLOW"
+      ],
+      "classification": "FP",
+      "latency_sec": 34.866,
+      "findings_details": [
+        {
+          "category": "INTEGER_OVERFLOW",
+          "severity": "MEDIUM",
+          "confidence": 0.73,
+          "evidence_status": "INSUFFICIENT_CONTEXT",
+          "source": "PROJECT_RULE",
+          "rule": "INTEGER_OVERFLOW",
+          "finding_snippet": "Root Cause:\nThe code calculates the momentum by multiplying the speed by the mass. If the speed is very large, the result can exceed the maximum value"
+        }
+      ]
+    },
+    {
+      "id": "TC_SAFE_FOPEN",
+      "name": "Checked fopen with defensive null check (SAFE)",
+      "target_category": "SAFE_FILE_ACCESS",
+      "ground_truth_present": false,
+      "detected_findings": 0,
+      "detected_categories": [],
+      "classification": "TN",
+      "latency_sec": 2.045,
+      "findings_details": []
+    },
+    {
+      "id": "TC_SAFE_STRNCPY",
+      "name": "Bounded strncpy with explicit null termination (SAFE)",
+      "target_category": "SAFE_STRING_OPS",
+      "ground_truth_present": false,
+      "detected_findings": 0,
+      "detected_categories": [],
+      "classification": "TN",
+      "latency_sec": 2.058,
+      "findings_details": []
+    }
+  ]
+}

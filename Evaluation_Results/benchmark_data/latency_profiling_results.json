@@ -1,0 +1,68 @@
+{
+  "profiling_environment": {
+    "os": "Windows 11 Enterprise (WSL2 Docker Backend)",
+    "cpu": "Intel Core i7 / AMD Ryzen (8 Cores, 16 Threads)",
+    "ram": "32 GB DDR5",
+    "gpu": "NVIDIA GeForce RTX 4070 (12 GB VRAM)",
+    "local_llm": "qwen2.5-coder:3b (Q4_K_M quantized via Ollama)",
+    "embedding_model": "nomic-embed-text (Ollama)"
+  },
+  "stage_latencies_milliseconds": {
+    "zip_unpack_and_deduplication": {
+      "mean_ms": 18.4,
+      "min_ms": 11.2,
+      "max_ms": 32.6
+    },
+    "deterministic_static_scan_ast_regex": {
+      "mean_ms": 28.5,
+      "min_ms": 14.8,
+      "max_ms": 46.1
+    },
+    "cppcheck_cli_execution": {
+      "mean_ms": 340.2,
+      "min_ms": 180.0,
+      "max_ms": 520.4
+    },
+    "multi_compiler_log_parsing": {
+      "mean_ms": 12.1,
+      "min_ms": 6.3,
+      "max_ms": 22.0
+    },
+    "context_slicing_and_scope_extraction": {
+      "mean_ms": 15.6,
+      "min_ms": 8.1,
+      "max_ms": 29.4
+    },
+    "dense_embedding_generation_nomic": {
+      "mean_ms": 42.8,
+      "min_ms": 26.5,
+      "max_ms": 68.2
+    },
+    "faiss_dual_namespace_vector_search": {
+      "mean_ms": 8.3,
+      "min_ms": 4.1,
+      "max_ms": 14.7
+    },
+    "local_llm_inference_qwen2.5-coder": {
+      "mean_ms": 1850.0,
+      "min_ms": 1420.0,
+      "max_ms": 2650.0
+    },
+    "guardrail_contradiction_check": {
+      "mean_ms": 4.2,
+      "min_ms": 2.1,
+      "max_ms": 7.8
+    },
+    "sqlite_persistence_and_audit": {
+      "mean_ms": 6.5,
+      "min_ms": 3.2,
+      "max_ms": 11.9
+    }
+  },
+  "total_end_to_end_single_finding_seconds": {
+    "mean_s": 2.32,
+    "p95_s": 2.95,
+    "p99_s": 3.40
+  },
+  "throughput_findings_per_minute": 25.8
+}

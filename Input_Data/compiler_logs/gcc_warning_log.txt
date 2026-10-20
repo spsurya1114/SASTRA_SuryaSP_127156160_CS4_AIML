@@ -1,0 +1,4 @@
+src/main.c:14:5: warning: 'strcpy' writing 32 bytes into a region of size 16 overflows the destination [-Wstringop-overflow=]
+src/main.c:28:10: warning: format not a string literal and no format arguments [-Wformat-security]
+src/sensor.c:42:12: warning: potential null pointer dereference 'sensor_data' [-Wnull-dereference]
+src/hardware.c:19:15: warning: implicit conversion from 'int' to 'short' changes value from 70000 to 4464 [-Woverflow]

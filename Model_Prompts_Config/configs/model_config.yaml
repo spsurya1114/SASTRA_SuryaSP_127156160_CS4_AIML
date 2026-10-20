@@ -1,0 +1,37 @@
+# SecureCodeRAG Model & Inference Configuration
+
+llm:
+  provider: "ollama"
+  model_name: "qwen2.5-coder:3b"
+  base_url: "http://host.docker.internal:11434"
+  parameters:
+    temperature: 0.1
+    top_p: 0.90
+    top_k: 40
+    repeat_penalty: 1.15
+    num_ctx: 8192
+    num_predict: 1024
+    stop:
+      - "<|endoftext|>"
+      - "<|im_end|>"
+      - "```\n\n"
+
+embedding:
+  provider: "ollama"
+  model_name: "nomic-embed-text"
+  base_url: "http://host.docker.internal:11434"
+  parameters:
+    dimension: 768
+    context_length: 8192
+    normalize: true
+
+rag:
+  top_k: 4
+  similarity_threshold: 0.65
+  dual_namespace:
+    knowledge_base: "knowledge"
+    repository_store: "project_id"
+  chunking:
+    chunk_size_tokens: 500
+    chunk_overlap_tokens: 50
+    strategy: "semantic_boundary"

@@ -1,0 +1,31 @@
+{
+  "analysis_title": "Confidence Score Ranking Aid Analysis",
+  "methodology_note": "Confidence is calculated deterministically from static tool agreement (Tree-Sitter + Cppcheck = 0.98, Cppcheck alone = 0.90, Compiler flag = 0.95, Regex rule = 0.70 - 0.85) plus vector context presence (+0.08). It serves as a triage ranking aid to prioritize reviewer attention, not a calibrated mathematical probability.",
+  "confidence_bands": [
+    {
+      "band": "Very High (0.95 - 0.98)",
+      "detection_source": "COMBINED (AST + Cppcheck) or High-Confidence Compiler Diagnostic",
+      "findings_evaluated": 78,
+      "confirmed_by_reviewer": 75,
+      "confirmation_rate": "96.15%",
+      "recommended_action": "Immediate Priority Queue (Triage First)"
+    },
+    {
+      "band": "High (0.80 - 0.94)",
+      "detection_source": "Single Authoritative Tool (Cppcheck alone or Compiler Warning)",
+      "findings_evaluated": 52,
+      "confirmed_by_reviewer": 46,
+      "confirmation_rate": "88.46%",
+      "recommended_action": "Standard Review Queue"
+    },
+    {
+      "band": "Moderate (0.65 - 0.79)",
+      "detection_source": "Regex / Heuristic Single Rule Match",
+      "findings_evaluated": 31,
+      "confirmed_by_reviewer": 22,
+      "confirmation_rate": "70.97%",
+      "recommended_action": "Secondary Review Queue (Verify Context)"
+    }
+  ],
+  "correlation_summary": "Higher confidence scores show a monotonic increase in human reviewer confirmation (70.97% -> 88.46% -> 96.15%), proving high utility as an engineering prioritization ranking aid."
+}

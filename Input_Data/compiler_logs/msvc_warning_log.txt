@@ -1,0 +1,3 @@
+src\main.c(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead.
+src\sensor.c(42): warning C6011: Dereferencing NULL pointer 'sensor_data'.
+src\hardware.c(85): warning C6386: Buffer overrun while writing to 'telemetry_buf'.

@@ -1,0 +1,26 @@
+# ─── Web Framework ───────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+
+# ─── Database ────────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.30
+psycopg2-binary>=2.9.9
+pgvector>=0.3.2
+
+# ─── File Uploads / Forms ────────────────────────────────────────────────────
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+
+# ─── Face Recognition ────────────────────────────────────────────────────────
+insightface>=0.7.3
+onnxruntime>=1.18.0
+opencv-python-headless>=4.9.0
+numpy>=1.26.4
+Pillow>=10.3.0
+
+# ─── Config & Security ───────────────────────────────────────────────────────
+python-dotenv>=1.0.1
+PyJWT>=2.8.0
+bcrypt>=4.1.2
+gunicorn>=22.0.0
+requests>=2.32.0
